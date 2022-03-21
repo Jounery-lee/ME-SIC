@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ME;SIC</title>
+    <script>
+    var smooth     = ["https://www.youtube.com/watch?v=DUzEYcR2VtM", "https://www.youtube.com/watch?v=pvGlGQZzc0M"];
+    var sad        = ["https://www.youtube.com/watch?v=CUCLNPOjPZw", "https://www.youtube.com/watch?v=vS4NxiURhEw"];
+    var passinate  = ["https://www.youtube.com/watch?v=6Z2xClustQo", "https://www.youtube.com/watch?v=Nq5LMGtBmis"];
+    var citypop    = ["https://www.youtube.com/watch?v=VEe_yIbW64w", "https://www.youtube.com/watch?v=9Gj47G2e1Jc"];
+    var jazznblues = ["https://www.youtube.com/watch?v=jYmDxZgfQ-g", "https://www.youtube.com/watch?v=z1nOfbQ_GwU"];
+    var bossanova  = ["https://www.youtube.com/watch?v=ltCULQ-e6tc", "https://www.youtube.com/watch?v=T_8o2oEt2hg"];
+    /*  If you want to open the link on new tap, Write <a href="http://Wdqwd.com target='_blank'">something</a>.  */
+    function random(links)
+    {
+    return links[Math.floor(Math.random()*links.length)];
+    /*Text is line breaked after function and return dosen't work. so don't touch enter!!!
+
+      Math.floor() make number in () 내림 like this (1.3 -> 1 , 3.5 -> 3)
+      And Math.random() giva me a number between 0~1.
+      Look at that formlar. you will know that give me content in array randomly*/
+    }
+    function inputlink(self){
+      document.write("<a href="+random(self)+" target='_blank'>");
+      /*Focus flow of function!!!!! you can understand!!*/
+    }
+    </script>
+    <style>
+      h1{
+        color:white;
+        font-size: 50px;
+        margin-bottom: 100px;
+        font-family: "Lucida Handwriting", cursive;
+      }
+      body{
+        margin:0px;
+        background-color:black;
+        text-align:center;
+      }
+      #bodysection{
+        display:grid;
+        width:100%;
+        height:250px;
+        grid-template-areas: "night cloud sun"
+                             "city jazzbar beach";
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+      }
+      #bodysection > night {
+        grid-area: night;
+      }
+      #bodysection > cloud {
+        grid-area: cloud;
+      }
+      #bodysection > sun {
+        grid-area: sun;
+      }
+      #bodysection > city {
+        grid-area: city;
+      }
+      #bodysection > jazzbar {
+        grid-area: jazzbar;
+      }
+      #bodysection > beach {
+        grid-area: beach;
+      }
+      #night{
+        padding-top: 0px;
+        width: 100%;
+        transform: rotate(340deg);
+        }
+      #cloud{
+        padding-top: 0px;
+        width: 100%;
+        transform: rotate(9deg);
+        }
+      #sun{
+        padding-top: 0px;
+        width: 90%;
+        transform: rotate(351deg);
+        }
+      #city{
+        padding-top: 23px;
+        width: 100%;
+        transform: rotate(8deg);
+        }
+      #jazzbar{
+        padding-top: 42px;
+        width: 100%;
+        transform: rotate(357deg);
+        }
+      #beach{
+        padding-top: 42px;
+        width: 95%;
+        transform: rotate(6deg);
+        }
+      .container {
+        position: relative;
+        width: 100%;
+      }
+      .image {
+        display: block;
+        width: 100%;
+        height: auto;
+        opacity: 1;
+        transition: .5s ease;
+      }
+
+      .overlay {
+        position: relative;
+        top:-280px;
+        left:140px;
+        height: 50%;
+        width: 50%;
+        opacity: 0;
+        transition: .5s ease;
+        background-color: #black;
+      }
+
+      .container:hover .overlay {
+        opacity: 1;
+      }
+      .container:hover .image{
+        opacity:0;
+      }
+
+      .text {
+        color: white;
+        font-size: 50px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        /*-webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        뭔지 모르는데 아마 특정 기기 환경에서만 필요한 코드일듯 */
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-family: "Lucida Handwriting", cursive;
+        /************
+        Font-Family is a safety system in many other browser.
+        you have to place generic font familly end of CSS code after do 1st font 2nd font and so on.
+        lucida handwriting of code on line115 do not working. so cursive is generic font familly name work for lucida.
+        ************/
+      }
+    </style>
+  </head>
+  <body>
+    <h1>ME;SIC</h1>
+    <section id=bodysection>
+      <night class="container"><script>inputlink(smooth)</script>
+          <img id="night" class="image" src="night.jpg" alt="">
+          <div class="overlay">
+            <div class="text">Smooth</div>
+          </div></a>
+      </night>
+      <cloud class="container"><script>inputlink(sad)</script>
+          <img id=cloud class="image" src="cloud.jpg" alt="" width='37%'>
+          <div class="overlay">
+            <div class="text">Sad</div>
+          </div></a>
+      </cloud>
+      <sun class="container"><script>inputlink(passinate)</script>
+          <img id=sun class="image" src="sun.jpg" alt="" width='30%'>
+          <div class="overlay">
+            <div class="text">Passinate</div>
+          </div></a>
+      </sun>
+      <city class="container"><script>inputlink(citypop)</script>
+          <img id=city class="image" src="city.jpg" alt="" width='40%'>
+          <div class="overlay">
+            <div class="text">Citypop</div>
+          </div></a>
+      </city>
+      <jazzbar class="container"><script>inputlink(jazznblues)</script>
+          <img id=jazzbar class="image" src="jazzbar.jpg" alt="" width='40%'>
+          <div class="overlay">
+            <div class="text">Jazz&blues</div>
+          </div></a>
+      </jazzbar>
+      <beach class="container"><script>inputlink(bossanova)</script>
+          <img id=beach class="image" src="beach.jpg" alt="" width='40%'>
+          <div class="overlay">
+            <div class="text">Bossa Nova</div>
+          </div></a>
+      </beach>
+    </section>
+  </body>
+</html>
